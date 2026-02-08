@@ -1,8 +1,8 @@
 from launch import LaunchDescription
-from launch.actions import ExecuteProcess
+from launch.actions import DeclareLaunchArgument, ExecuteProcess
+from launch.substitutions import Command, LaunchConfiguration
 from launch_ros.actions import Node
 from ament_index_python.packages import get_package_share_directory
-from launch.substitutions import Command
 from launch_ros.parameter_descriptions import ParameterValue
 import os
 
@@ -10,7 +10,8 @@ import os
 def generate_launch_description():
     sim_share = get_package_share_directory('drobot_simulation')
     desc_share = get_package_share_directory('drobot_description')
-    world_path = os.path.join(desc_share, 'worlds', 'empty.sdf')
+    default_world = os.path.join(desc_share, 'worlds', 'basic.sdf')
+    world_path = LaunchConfiguration('world')
     bridge_yaml = os.path.join(sim_share, 'config', 'bridge.yaml')
     xacro_path = os.path.join(desc_share, 'urdf', 'drobot.urdf.xacro')
 
@@ -18,7 +19,12 @@ def generate_launch_description():
     desc_share_parent = os.path.dirname(desc_share)
     gz_path = os.environ.get('GZ_SIM_RESOURCE_PATH', '')
     gz_path = f"{desc_share_parent}:{gz_path}" if gz_path else desc_share_parent
-    
+
+    world_arg = DeclareLaunchArgument(
+        'world',
+        default_value=default_world,
+        description='Absolute path to an SDF world file.',
+    )
 
     gazebo = ExecuteProcess(
         cmd=['gz', 'sim', '-r', world_path],
@@ -60,7 +66,6 @@ def generate_launch_description():
         executable='create',
         output='screen',
         arguments=[
-            '-world', 'empty',
             '-name', 'drobot',
             '-topic', 'robot_description',
             '-x', '0', '-y', '0',
@@ -69,4 +74,4 @@ def generate_launch_description():
     )
 
 
-    return LaunchDescription([gazebo, bridge, rsp, spawn])
+    return LaunchDescription([world_arg, gazebo, bridge, rsp, spawn])

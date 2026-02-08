@@ -1,5 +1,8 @@
 import tkinter as tk
 from tkinter import ttk, messagebox
+from pathlib import Path
+import shlex
+import subprocess
 
 root = tk.Tk()
 root.title("World Generator UI")
@@ -32,10 +35,12 @@ ttk.Label(left, text="Select World").pack(anchor="w")
 ttk.Label(middle, text="Create World").pack(anchor="w")
 ttk.Label(right, text="Selection").pack(anchor="w")
 
-saved_worlds = [
-    "City/Urban 1", "City/Urban 2", "Nature", "Hospital",
-    "Road 1", "Road 2", "Extraterrestrial"
-]
+generated_world_dir = Path(__file__).resolve().parent.parent / "worlds" / "generated"
+workspace_dir = Path(__file__).resolve().parents[3]
+saved_worlds = sorted(
+    world_file.name for world_file in generated_world_dir.glob("*.sdf")
+    if world_file.is_file()
+)
 create_worlds = ["Stationary", "Moving", "Random"]
 
 selected_world = tk.StringVar(value="(none)")
@@ -51,8 +56,23 @@ action_btn.pack(pady=5, fill="x")
 def action_world():
     world = selected_world.get()
     if world in saved_worlds:
-        print(f"Loading world: {world}")
-        messagebox.showinfo("Load World", f"World '{world}' loaded successfully.")
+        world_path = generated_world_dir / world
+        if not world_path.is_file():
+            messagebox.showerror("Load World", f"World file not found:\n{world_path}")
+            return
+
+        cmd = (
+            f"cd {shlex.quote(str(workspace_dir))} && "
+            "colcon build --packages-select drobot_description drobot_simulation && "
+            "source install/setup.bash && "
+            f"ros2 launch drobot_simulation sim.launch.py world:={shlex.quote(str(world_path))}"
+        )
+        subprocess.Popen(["bash", "-lc", cmd])
+        print(f"Launching world: {world_path}")
+        messagebox.showinfo(
+            "Load World",
+            f"Launching '{world}'.\nRunning build + source + launch in a new shell."
+        )
     elif world in create_worlds:
         print(f"Creating world: {world}")
         messagebox.showinfo("Create World", f"World '{world}' created successfully.")
