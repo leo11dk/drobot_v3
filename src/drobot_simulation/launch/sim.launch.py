@@ -27,6 +27,21 @@ def generate_launch_description():
         default_value=default_world,
         description='Absolute path to an SDF world file.',
     )
+    spawn_x_arg = DeclareLaunchArgument(
+        'spawn_x',
+        default_value='0.0',
+        description='Robot spawn x position in world frame.',
+    )
+    spawn_y_arg = DeclareLaunchArgument(
+        'spawn_y',
+        default_value='0.0',
+        description='Robot spawn y position in world frame.',
+    )
+    spawn_z_arg = DeclareLaunchArgument(
+        'spawn_z',
+        default_value='0.05',
+        description='Robot spawn z position in world frame.',
+    )
     use_rviz_arg = DeclareLaunchArgument(
         'use_rviz',
         default_value='true',
@@ -108,10 +123,25 @@ def generate_launch_description():
         arguments=[
             '-name', 'drobot',
             '-topic', 'robot_description',
-            '-x', '0', '-y', '0',
-            '-z', '0.05'   # <-- HEIGHT (meters)
+            '-x', LaunchConfiguration('spawn_x'),
+            '-y', LaunchConfiguration('spawn_y'),
+            '-z', LaunchConfiguration('spawn_z')
         ],
     )
 
 
-    return LaunchDescription([world_arg, use_rviz_arg, use_teleop_arg, gazebo, bridge, ekf, rsp, rviz, teleop, spawn])
+    return LaunchDescription([
+        world_arg,
+        spawn_x_arg,
+        spawn_y_arg,
+        spawn_z_arg,
+        use_rviz_arg,
+        use_teleop_arg,
+        gazebo,
+        bridge,
+        ekf,
+        rsp,
+        rviz,
+        teleop,
+        spawn,
+    ])
