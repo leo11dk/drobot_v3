@@ -259,8 +259,8 @@
       <wheel_radius>${wheel_radius}</wheel_radius>
       <max_linear_acceleration>1.0</max_linear_acceleration>
       <max_angular_acceleration>2.0</max_angular_acceleration>
-      <topic>cmd_vel</topic>
-      <odom_topic>odom</odom_topic>
+      <topic>/cmd_vel</topic>
+      <odom_topic>/wheel_odom</odom_topic>
       <frame_id>odom</frame_id>
       <child_frame_id>base_footprint</child_frame_id>
       <odom_publish_frequency>50</odom_publish_frequency>
@@ -269,10 +269,21 @@
     </plugin>
   </gazebo>
 
+  <!-- World-pose odometry publisher (collision-consistent /odom) -->
+  <gazebo>
+    <plugin filename="gz-sim-odometry-publisher-system" name="gz::sim::systems::OdometryPublisher">
+      <odom_frame>odom</odom_frame>
+      <robot_base_frame>base_footprint</robot_base_frame>
+      <dimensions>2</dimensions>
+      <odom_publish_frequency>50</odom_publish_frequency>
+      <odom_topic>/odom</odom_topic>
+    </plugin>
+  </gazebo>
+
   <!-- Joint State Publisher -->
   <gazebo>
     <plugin filename="gz-sim-joint-state-publisher-system" name="gz::sim::systems::JointStatePublisher">
-      <topic>joint_states</topic>
+      <topic>/joint_states</topic>
       <!-- 4바퀴 조인트 -->
       <joint_name>front_left_wheel_joint</joint_name>
       <joint_name>front_right_wheel_joint</joint_name>
@@ -286,7 +297,7 @@
     <sensor name="imu_sensor" type="imu">
       <always_on>true</always_on>
       <update_rate>100</update_rate>
-      <topic>imu</topic>
+      <topic>/imu</topic>
       <gz_frame_id>imu_link</gz_frame_id>
     </sensor>
   </gazebo>
@@ -319,7 +330,7 @@
   <!-- Camera Sensor -->
   <gazebo reference="camera_link">
     <sensor name="camera" type="camera">
-      <topic>camera/image_raw</topic>
+      <topic>/camera/image_raw</topic>
       <update_rate>30</update_rate>
       <gz_frame_id>camera_optical_frame</gz_frame_id>
       <camera>
