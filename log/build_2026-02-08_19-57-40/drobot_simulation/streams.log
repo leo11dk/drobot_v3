@@ -1,0 +1,20 @@
+[1.155s] Invoking command in '/home/leo11dk/Desktop/drobot_v3/build/drobot_simulation': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/leo11dk/Desktop/drobot_v3/build/drobot_simulation/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/leo11dk/Desktop/drobot_v3/install/drobot_simulation/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/leo11dk/Desktop/drobot_v3/build/drobot_simulation/build --no-deps symlink_data --force
+[1.516s] running develop
+[1.763s] running egg_info
+[1.786s] writing drobot_simulation.egg-info/PKG-INFO
+[1.787s] writing dependency_links to drobot_simulation.egg-info/dependency_links.txt
+[1.787s] writing requirements to drobot_simulation.egg-info/requires.txt
+[1.787s] writing top-level names to drobot_simulation.egg-info/top_level.txt
+[1.834s] reading manifest file 'drobot_simulation.egg-info/SOURCES.txt'
+[1.835s] writing manifest file 'drobot_simulation.egg-info/SOURCES.txt'
+[1.860s] running build_ext
+[1.861s] Creating /home/leo11dk/Desktop/drobot_v3/install/drobot_simulation/lib/python3.12/site-packages/drobot-simulation.egg-link (link to .)
+[1.861s] 
+[1.861s] Installed /home/leo11dk/Desktop/drobot_v3/build/drobot_simulation
+[1.861s] running symlink_data
+[1.861s] symbolically linking /home/leo11dk/Desktop/drobot_v3/build/drobot_simulation/resource/drobot_simulation -> /home/leo11dk/Desktop/drobot_v3/install/drobot_simulation/share/ament_index/resource_index/packages
+[1.861s] symbolically linking /home/leo11dk/Desktop/drobot_v3/build/drobot_simulation/package.xml -> /home/leo11dk/Desktop/drobot_v3/install/drobot_simulation/share/drobot_simulation
+[1.861s] symbolically linking /home/leo11dk/Desktop/drobot_v3/build/drobot_simulation/launch/sim.launch.py -> /home/leo11dk/Desktop/drobot_v3/install/drobot_simulation/share/drobot_simulation/launch
+[1.862s] symbolically linking /home/leo11dk/Desktop/drobot_v3/build/drobot_simulation/worlds/empty.sdf -> /home/leo11dk/Desktop/drobot_v3/install/drobot_simulation/share/drobot_simulation/worlds
+[1.862s] symbolically linking /home/leo11dk/Desktop/drobot_v3/build/drobot_simulation/config/bridge.yaml -> /home/leo11dk/Desktop/drobot_v3/install/drobot_simulation/share/drobot_simulation/config
+[1.897s] Invoked command in '/home/leo11dk/Desktop/drobot_v3/build/drobot_simulation' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/leo11dk/Desktop/drobot_v3/build/drobot_simulation/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/leo11dk/Desktop/drobot_v3/install/drobot_simulation/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/leo11dk/Desktop/drobot_v3/build/drobot_simulation/build --no-deps symlink_data --force

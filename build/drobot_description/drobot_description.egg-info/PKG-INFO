@@ -1,0 +1,7 @@
+Metadata-Version: 2.1
+Name: drobot-description
+Version: 0.0.0
+Summary: URDF/Xacro and meshes for drobot
+Maintainer: leo11dk
+Maintainer-email: dongukleokim@gmail.com
+License: MIT

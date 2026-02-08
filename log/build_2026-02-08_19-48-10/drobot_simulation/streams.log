@@ -1,0 +1,15 @@
+[1.124s] Invoking command in '/home/leo11dk/Desktop/drobot_v3/build/drobot_simulation': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/leo11dk/Desktop/drobot_v3/build/drobot_simulation/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/leo11dk/Desktop/drobot_v3/install/drobot_simulation/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/leo11dk/Desktop/drobot_v3/build/drobot_simulation/build --no-deps symlink_data
+[1.475s] running develop
+[1.716s] running egg_info
+[1.739s] writing drobot_simulation.egg-info/PKG-INFO
+[1.739s] writing dependency_links to drobot_simulation.egg-info/dependency_links.txt
+[1.739s] writing requirements to drobot_simulation.egg-info/requires.txt
+[1.739s] writing top-level names to drobot_simulation.egg-info/top_level.txt
+[1.786s] reading manifest file 'drobot_simulation.egg-info/SOURCES.txt'
+[1.790s] writing manifest file 'drobot_simulation.egg-info/SOURCES.txt'
+[1.814s] running build_ext
+[1.814s] Creating /home/leo11dk/Desktop/drobot_v3/install/drobot_simulation/lib/python3.12/site-packages/drobot-simulation.egg-link (link to .)
+[1.815s] 
+[1.815s] Installed /home/leo11dk/Desktop/drobot_v3/build/drobot_simulation
+[1.815s] running symlink_data
+[1.844s] Invoked command in '/home/leo11dk/Desktop/drobot_v3/build/drobot_simulation' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/leo11dk/Desktop/drobot_v3/build/drobot_simulation/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/leo11dk/Desktop/drobot_v3/install/drobot_simulation/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/leo11dk/Desktop/drobot_v3/build/drobot_simulation/build --no-deps symlink_data

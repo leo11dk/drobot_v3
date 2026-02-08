@@ -1,0 +1,16 @@
+package.xml
+setup.cfg
+setup.py
+../../build/drobot_description/drobot_description.egg-info/PKG-INFO
+../../build/drobot_description/drobot_description.egg-info/SOURCES.txt
+../../build/drobot_description/drobot_description.egg-info/dependency_links.txt
+../../build/drobot_description/drobot_description.egg-info/requires.txt
+../../build/drobot_description/drobot_description.egg-info/top_level.txt
+../../build/drobot_description/drobot_description.egg-info/zip-safe
+drobot_description/__init__.py
+meshes/drobot_body.stl
+resource/drobot_description
+test/test_copyright.py
+test/test_flake8.py
+test/test_pep257.py
+urdf/drobot.urdf.xacro

@@ -1,0 +1,15 @@
+[1.138s] Invoking command in '/home/leo11dk/Desktop/drobot_v3/build/drobot_description': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/leo11dk/Desktop/drobot_v3/build/drobot_description/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/leo11dk/Desktop/drobot_v3/install/drobot_description/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/leo11dk/Desktop/drobot_v3/build/drobot_description/build --no-deps symlink_data
+[1.497s] running develop
+[1.741s] running egg_info
+[1.765s] writing drobot_description.egg-info/PKG-INFO
+[1.765s] writing dependency_links to drobot_description.egg-info/dependency_links.txt
+[1.765s] writing requirements to drobot_description.egg-info/requires.txt
+[1.765s] writing top-level names to drobot_description.egg-info/top_level.txt
+[1.813s] reading manifest file 'drobot_description.egg-info/SOURCES.txt'
+[1.840s] writing manifest file 'drobot_description.egg-info/SOURCES.txt'
+[1.865s] running build_ext
+[1.865s] Creating /home/leo11dk/Desktop/drobot_v3/install/drobot_description/lib/python3.12/site-packages/drobot-description.egg-link (link to .)
+[1.865s] 
+[1.865s] Installed /home/leo11dk/Desktop/drobot_v3/build/drobot_description
+[1.865s] running symlink_data
+[1.893s] Invoked command in '/home/leo11dk/Desktop/drobot_v3/build/drobot_description' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/leo11dk/Desktop/drobot_v3/build/drobot_description/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/leo11dk/Desktop/drobot_v3/install/drobot_description/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/leo11dk/Desktop/drobot_v3/build/drobot_description/build --no-deps symlink_data

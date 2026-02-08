@@ -1,0 +1,26 @@
+[1.219s] Invoking command in '/home/leo11dk/Desktop/drobot_v3/build/drobot_description': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/leo11dk/Desktop/drobot_v3/build/drobot_description/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/leo11dk/Desktop/drobot_v3/install/drobot_description/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/leo11dk/Desktop/drobot_v3/build/drobot_description/build --no-deps symlink_data
+[1.571s] running develop
+[1.812s] running egg_info
+[1.812s] creating drobot_description.egg-info
+[1.835s] writing drobot_description.egg-info/PKG-INFO
+[1.836s] writing dependency_links to drobot_description.egg-info/dependency_links.txt
+[1.836s] writing requirements to drobot_description.egg-info/requires.txt
+[1.836s] writing top-level names to drobot_description.egg-info/top_level.txt
+[1.836s] writing manifest file 'drobot_description.egg-info/SOURCES.txt'
+[1.882s] reading manifest file 'drobot_description.egg-info/SOURCES.txt'
+[1.883s] writing manifest file 'drobot_description.egg-info/SOURCES.txt'
+[1.907s] running build_ext
+[1.907s] Creating /home/leo11dk/Desktop/drobot_v3/install/drobot_description/lib/python3.12/site-packages/drobot-description.egg-link (link to .)
+[1.908s] 
+[1.908s] Installed /home/leo11dk/Desktop/drobot_v3/build/drobot_description
+[1.908s] running symlink_data
+[1.908s] creating /home/leo11dk/Desktop/drobot_v3/install/drobot_description/share/ament_index
+[1.908s] creating /home/leo11dk/Desktop/drobot_v3/install/drobot_description/share/ament_index/resource_index
+[1.908s] creating /home/leo11dk/Desktop/drobot_v3/install/drobot_description/share/ament_index/resource_index/packages
+[1.908s] symbolically linking /home/leo11dk/Desktop/drobot_v3/build/drobot_description/resource/drobot_description -> /home/leo11dk/Desktop/drobot_v3/install/drobot_description/share/ament_index/resource_index/packages
+[1.909s] symbolically linking /home/leo11dk/Desktop/drobot_v3/build/drobot_description/package.xml -> /home/leo11dk/Desktop/drobot_v3/install/drobot_description/share/drobot_description
+[1.909s] creating /home/leo11dk/Desktop/drobot_v3/install/drobot_description/share/drobot_description/urdf
+[1.909s] symbolically linking /home/leo11dk/Desktop/drobot_v3/build/drobot_description/urdf/drobot.urdf.xacro -> /home/leo11dk/Desktop/drobot_v3/install/drobot_description/share/drobot_description/urdf
+[1.909s] creating /home/leo11dk/Desktop/drobot_v3/install/drobot_description/share/drobot_description/meshes
+[1.909s] symbolically linking /home/leo11dk/Desktop/drobot_v3/build/drobot_description/meshes/drobot_body.stl -> /home/leo11dk/Desktop/drobot_v3/install/drobot_description/share/drobot_description/meshes
+[1.939s] Invoked command in '/home/leo11dk/Desktop/drobot_v3/build/drobot_description' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/leo11dk/Desktop/drobot_v3/build/drobot_description/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/leo11dk/Desktop/drobot_v3/install/drobot_description/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/leo11dk/Desktop/drobot_v3/build/drobot_description/build --no-deps symlink_data

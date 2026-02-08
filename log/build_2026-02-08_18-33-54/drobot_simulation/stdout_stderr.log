@@ -1,0 +1,20 @@
+running develop
+running egg_info
+creating drobot_simulation.egg-info
+writing drobot_simulation.egg-info/PKG-INFO
+writing dependency_links to drobot_simulation.egg-info/dependency_links.txt
+writing requirements to drobot_simulation.egg-info/requires.txt
+writing top-level names to drobot_simulation.egg-info/top_level.txt
+writing manifest file 'drobot_simulation.egg-info/SOURCES.txt'
+reading manifest file 'drobot_simulation.egg-info/SOURCES.txt'
+writing manifest file 'drobot_simulation.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/leo11dk/Desktop/drobot_v3/install/drobot_simulation/lib/python3.12/site-packages/drobot-simulation.egg-link (link to .)
+
+Installed /home/leo11dk/Desktop/drobot_v3/build/drobot_simulation
+running symlink_data
+creating /home/leo11dk/Desktop/drobot_v3/install/drobot_simulation/share/ament_index
+creating /home/leo11dk/Desktop/drobot_v3/install/drobot_simulation/share/ament_index/resource_index
+creating /home/leo11dk/Desktop/drobot_v3/install/drobot_simulation/share/ament_index/resource_index/packages
+symbolically linking /home/leo11dk/Desktop/drobot_v3/build/drobot_simulation/resource/drobot_simulation -> /home/leo11dk/Desktop/drobot_v3/install/drobot_simulation/share/ament_index/resource_index/packages
+symbolically linking /home/leo11dk/Desktop/drobot_v3/build/drobot_simulation/package.xml -> /home/leo11dk/Desktop/drobot_v3/install/drobot_simulation/share/drobot_simulation
