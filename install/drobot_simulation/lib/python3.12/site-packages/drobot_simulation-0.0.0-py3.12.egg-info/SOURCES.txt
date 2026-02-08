@@ -14,4 +14,3 @@ resource/drobot_simulation
 test/test_copyright.py
 test/test_flake8.py
 test/test_pep257.py
-worlds/empty.sdf

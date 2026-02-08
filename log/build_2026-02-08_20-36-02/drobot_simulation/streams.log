@@ -1,0 +1,29 @@
+[1.138s] Invoking command in '/home/leo11dk/Desktop/drobot_v3/build/drobot_simulation': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/leo11dk/Desktop/drobot_v3/build/drobot_simulation/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/leo11dk/Desktop/drobot_v3/install/drobot_simulation/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --uninstall --editable --build-directory /home/leo11dk/Desktop/drobot_v3/build/drobot_simulation/build
+[1.479s] running develop
+[1.728s] Removing /home/leo11dk/Desktop/drobot_v3/install/drobot_simulation/lib/python3.12/site-packages/drobot-simulation.egg-link (link to .)
+[1.770s] Invoked command in '/home/leo11dk/Desktop/drobot_v3/build/drobot_simulation' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/leo11dk/Desktop/drobot_v3/build/drobot_simulation/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/leo11dk/Desktop/drobot_v3/install/drobot_simulation/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --uninstall --editable --build-directory /home/leo11dk/Desktop/drobot_v3/build/drobot_simulation/build
+[1.771s] Invoking command in '/home/leo11dk/Desktop/drobot_v3/src/drobot_simulation': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/leo11dk/Desktop/drobot_v3/build/drobot_simulation/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/leo11dk/Desktop/drobot_v3/install/drobot_simulation/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/drobot_simulation build --build-base /home/leo11dk/Desktop/drobot_v3/build/drobot_simulation/build install --record /home/leo11dk/Desktop/drobot_v3/build/drobot_simulation/install.log --single-version-externally-managed install_data --force
+[2.069s] running egg_info
+[2.092s] writing ../../build/drobot_simulation/drobot_simulation.egg-info/PKG-INFO
+[2.093s] writing dependency_links to ../../build/drobot_simulation/drobot_simulation.egg-info/dependency_links.txt
+[2.093s] writing requirements to ../../build/drobot_simulation/drobot_simulation.egg-info/requires.txt
+[2.093s] writing top-level names to ../../build/drobot_simulation/drobot_simulation.egg-info/top_level.txt
+[2.141s] reading manifest file '../../build/drobot_simulation/drobot_simulation.egg-info/SOURCES.txt'
+[2.142s] writing manifest file '../../build/drobot_simulation/drobot_simulation.egg-info/SOURCES.txt'
+[2.142s] running build
+[2.142s] running build_py
+[2.142s] running install
+[2.148s] running install_lib
+[2.172s] creating /home/leo11dk/Desktop/drobot_v3/install/drobot_simulation/lib/python3.12/site-packages/drobot_simulation
+[2.172s] copying /home/leo11dk/Desktop/drobot_v3/build/drobot_simulation/build/lib/drobot_simulation/__init__.py -> /home/leo11dk/Desktop/drobot_v3/install/drobot_simulation/lib/python3.12/site-packages/drobot_simulation
+[2.173s] byte-compiling /home/leo11dk/Desktop/drobot_v3/install/drobot_simulation/lib/python3.12/site-packages/drobot_simulation/__init__.py to __init__.cpython-312.pyc
+[2.173s] running install_data
+[2.173s] copying resource/drobot_simulation -> /home/leo11dk/Desktop/drobot_v3/install/drobot_simulation/share/ament_index/resource_index/packages
+[2.173s] copying package.xml -> /home/leo11dk/Desktop/drobot_v3/install/drobot_simulation/share/drobot_simulation
+[2.173s] copying launch/sim.launch.py -> /home/leo11dk/Desktop/drobot_v3/install/drobot_simulation/share/drobot_simulation/launch
+[2.173s] copying config/bridge.yaml -> /home/leo11dk/Desktop/drobot_v3/install/drobot_simulation/share/drobot_simulation/config
+[2.173s] running install_egg_info
+[2.198s] Copying ../../build/drobot_simulation/drobot_simulation.egg-info to /home/leo11dk/Desktop/drobot_v3/install/drobot_simulation/lib/python3.12/site-packages/drobot_simulation-0.0.0-py3.12.egg-info
+[2.199s] running install_scripts
+[2.354s] writing list of installed files to '/home/leo11dk/Desktop/drobot_v3/build/drobot_simulation/install.log'
+[2.383s] Invoked command in '/home/leo11dk/Desktop/drobot_v3/src/drobot_simulation' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/leo11dk/Desktop/drobot_v3/build/drobot_simulation/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/leo11dk/Desktop/drobot_v3/install/drobot_simulation/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/drobot_simulation build --build-base /home/leo11dk/Desktop/drobot_v3/build/drobot_simulation/build install --record /home/leo11dk/Desktop/drobot_v3/build/drobot_simulation/install.log --single-version-externally-managed install_data --force
