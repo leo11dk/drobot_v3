@@ -9,7 +9,7 @@ import xml.etree.ElementTree as ET
 
 root = tk.Tk()
 root.title("World Generator UI")
-root.geometry("900x500")
+root.geometry("1200x500")
 
 root.grid_rowconfigure(0, weight=1)
 root.grid_columnconfigure(0, weight=2)
@@ -17,6 +17,8 @@ root.grid_columnconfigure(1, weight=0)
 root.grid_columnconfigure(2, weight=2)
 root.grid_columnconfigure(3, weight=0)
 root.grid_columnconfigure(4, weight=2)
+root.grid_columnconfigure(5, weight=0)
+root.grid_columnconfigure(6, weight=2)
 
 left = ttk.Frame(root, padding=10)
 left.grid(row=0, column=0, sticky="nsew")
@@ -30,19 +32,29 @@ middle.grid(row=0, column=2, sticky="nsew")
 sep2 = ttk.Separator(root, orient="vertical")
 sep2.grid(row=0, column=3, sticky="ns")
 
+world_col = ttk.Frame(root, padding=10)
+world_col.grid(row=0, column=4, sticky="nsew")
+
+sep3 = ttk.Separator(root, orient="vertical")
+sep3.grid(row=0, column=5, sticky="ns")
+
 right = ttk.Frame(root, padding=10)
-right.grid(row=0, column=4, sticky="nsew")
+right.grid(row=0, column=6, sticky="nsew")
 
 # Headers
 ttk.Label(left, text="Select World").pack(anchor="w")
 ttk.Label(middle, text="Create World").pack(anchor="w")
+ttk.Label(world_col, text="Select .world").pack(anchor="w")
 ttk.Label(right, text="Selection").pack(anchor="w")
 
 generated_world_dir = Path(__file__).resolve().parent.parent / "worlds" / "generated"
+worlds_dir = Path(__file__).resolve().parent.parent / "worlds"
 world_generator_script = Path(__file__).resolve().parent / "world_generator.py"
 workspace_dir = Path(__file__).resolve().parents[3]
 saved_worlds = []
+saved_dot_worlds = []
 create_worlds = ["Stationary", "Moving", "Random"]
+saved_world_paths = {}
 
 selected_world = tk.StringVar(value="(none)")
 
@@ -59,10 +71,21 @@ left_buttons.pack(fill="both", expand=True)
 middle_buttons = ttk.Frame(middle)
 middle_buttons.pack(fill="both", expand=True)
 
+world_buttons = ttk.Frame(world_col)
+world_buttons.pack(fill="both", expand=True)
+
 
 def load_saved_worlds():
     return sorted(
         world_file.name for world_file in generated_world_dir.glob("*.sdf")
+        if world_file.is_file()
+    )
+
+
+def load_saved_dot_worlds():
+    return sorted(
+        world_file.relative_to(worlds_dir).as_posix()
+        for world_file in worlds_dir.rglob("*.world")
         if world_file.is_file()
     )
 
@@ -175,11 +198,13 @@ def find_safe_spawn(world_path):
 
 
 def refresh_saved_world_buttons():
-    global saved_worlds
+    global saved_worlds, saved_world_paths
     saved_worlds = load_saved_worlds()
+    saved_world_paths = {}
     for child in left_buttons.winfo_children():
         child.destroy()
     for world_name in saved_worlds:
+        saved_world_paths[world_name] = generated_world_dir / world_name
         ttk.Button(
             left_buttons,
             text=world_name,
@@ -187,10 +212,24 @@ def refresh_saved_world_buttons():
         ).pack(pady=5, fill="x")
 
 
+def refresh_saved_dot_world_buttons():
+    global saved_dot_worlds, saved_world_paths
+    saved_dot_worlds = load_saved_dot_worlds()
+    for child in world_buttons.winfo_children():
+        child.destroy()
+    for world_name in saved_dot_worlds:
+        saved_world_paths[world_name] = worlds_dir / world_name
+        ttk.Button(
+            world_buttons,
+            text=world_name,
+            command=lambda name=world_name: on_select_world(name)
+        ).pack(pady=5, fill="x")
+
+
 def action_world():
     world = selected_world.get()
-    if world in saved_worlds:
-        world_path = generated_world_dir / world
+    if world in saved_world_paths:
+        world_path = saved_world_paths[world]
         if not world_path.is_file():
             messagebox.showerror("Load World", f"World file not found:\n{world_path}")
             return
@@ -226,6 +265,7 @@ def action_world():
             return
 
         refresh_saved_world_buttons()
+        refresh_saved_dot_world_buttons()
         print(f"Running world generator for: {world}")
         messagebox.showinfo("Create World", f"Generated world for '{world}' and refreshed list.")
 
@@ -235,7 +275,7 @@ def on_select_world(world_name):
     print(f"Selected world: {world_name}")
 
     # Update the ONE button instead of creating new ones
-    if world_name in saved_worlds:
+    if world_name in saved_world_paths:
         action_btn.config(text="Load World", state="normal", command=action_world)
     elif world_name in create_worlds:
         action_btn.config(text="Create World", state="normal", command=action_world)
@@ -245,6 +285,7 @@ def on_select_world(world_name):
 
 def button_creation():
     refresh_saved_world_buttons()
+    refresh_saved_dot_world_buttons()
     for w in create_worlds:
         ttk.Button(middle_buttons, text=w, command=lambda name=w: on_select_world(name)).pack(pady=5, fill="x")
 
